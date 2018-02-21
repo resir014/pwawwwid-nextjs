@@ -89,6 +89,31 @@ injectGlobal`
     }
   }
 
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 1.414rem;
+    margin-bottom: .5rem;
+    color: ${colors.black};
+    font-weight: 400;
+    line-height: ${dimensions.lineHeight.heading};
+    text-rendering: optimizeLegibility;
+  }
+
+  h1 {
+    font-size: ${dimensions.headingSizes.h1}rem;
+  }
+
+  h2 {
+    font-size: ${dimensions.headingSizes.h2}rem;
+  }
+
+  h3 {
+    font-size: ${dimensions.headingSizes.h3}rem;
+  }
+
+  h4, h5, h6 {
+    font-size: ${dimensions.headingSizes.h4}rem;
+  }
+
   hr {
     position: relative;
     margin: 1.5rem 0;

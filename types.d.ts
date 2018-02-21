@@ -19,3 +19,24 @@ declare interface HeaderMenuItem {
   href: string
   label: string
 }
+
+declare interface FeedMetadata {
+  author?: string
+  description?: string
+  image?: string
+  link: string
+  title: string
+  url: string
+}
+
+declare interface FeedItem {
+  guid: string
+  title: string
+  link: string
+  author: string
+  thumbnail: string
+  pubDate: string
+  categories?: string[]
+  description: string
+  content: string
+}
