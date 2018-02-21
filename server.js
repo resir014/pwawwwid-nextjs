@@ -42,24 +42,23 @@ const static = (req, res, dest) => {
   })
 }
 
-app.prepare()
-  .then(() => {
-    const router = new Router()
-    const routes = {
-      '/sw.js': './static/workbox/sw.js',
-      '/manifest.json': './static/manifest.json',
-      '/favicon.ico': './static/favicon.ico'
-    }
+app.prepare().then(() => {
+  const router = new Router()
+  const routes = {
+    '/sw.js': './static/workbox/sw.js',
+    '/manifest.json': './static/manifest.json',
+    '/favicon.ico': './static/favicon.ico',
+  }
 
-    for (const [k, v] of Object.entries(routes)) {
-      router.get(k, async (req, res) => await static(req, res, v))
-    }
+  for (const [k, v] of Object.entries(routes)) {
+    router.get(k, async (req, res) => await static(req, res, v))
+  }
 
-    router.use('/_next', page)
-    router.use('/static', static)
-    router.get('/', page)
+  router.use('/_next', page)
+  router.use('/static', static)
+  router.get('/', page)
 
-    const server = micro((req, res) => router(req, res, finalhandler(req, res)))
-    server.listen(3000)
-    console.log(`> Ready on http://localhost:${port}`)
-  })
+  const server = micro((req, res) => router(req, res, finalhandler(req, res)))
+  server.listen(3000)
+  console.log(`> Ready on http://localhost:${port}`)
+})
