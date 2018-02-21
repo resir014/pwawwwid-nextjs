@@ -30,6 +30,7 @@ declare interface FeedMetadata {
 }
 
 declare interface FeedItem {
+  id: string
   guid: string
   title: string
   link: string
@@ -37,6 +38,7 @@ declare interface FeedItem {
   thumbnail: string
   pubDate: string
   categories?: string[]
+  excerpt: string
   description: string
   content: string
 }

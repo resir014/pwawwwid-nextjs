@@ -1,6 +1,9 @@
 import * as React from 'react'
+import striptags from 'striptags'
 import IndexLayout from '../layouts/index'
-import Container from '../components/Container'
+import ArticleItem from '../components/ArticleItem'
+import generateId from '../utils/generateId'
+import getExcerpt from '../utils/getExcerpt'
 
 interface IndexPageProps {
   status: string
@@ -13,7 +16,12 @@ class IndexPage extends React.Component<IndexPageProps> {
     const response = await fetch(
       'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2Fwwwid',
     )
-    const body = await response.json()
+    const body: IndexPageProps = await response.json()
+    body.items = body.items.map(item => ({
+      ...item,
+      id: generateId(item.guid),
+      excerpt: striptags(getExcerpt(item.description)),
+    }))
     return { ...body }
   }
 
@@ -21,11 +29,8 @@ class IndexPage extends React.Component<IndexPageProps> {
     return (
       <IndexLayout>
         {this.props.items.map(item => (
-          <Container key={item.guid}>
-            <h2>{item.title}</h2>
-          </Container>
+          <ArticleItem key={item.guid} article={item} />
         ))}
-        <hr />
       </IndexLayout>
     )
   }
