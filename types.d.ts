@@ -1,3 +1,8 @@
+declare interface ServiceWorkerConfig {
+  onUpdate?: (registration: ServiceWorkerRegistration) => any
+  onSuccess?: (registration: ServiceWorkerRegistration) => any
+}
+
 declare interface PostInfo {
   userId: number
   id: number
