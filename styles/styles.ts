@@ -17,6 +17,7 @@ export const colors = {
   white: '#fff',
   black: '#000',
   muted: '#999',
+  whisper: '#fafafa',
   border: '#eaeaea',
   accent: '#067df7',
 }
