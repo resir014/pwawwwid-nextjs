@@ -4,7 +4,6 @@ import IndexLayout from '../layouts/index'
 import ArticleItem from '../components/ArticleItem'
 import generateId from '../utils/generateId'
 import getExcerpt from '../utils/getExcerpt'
-import ServiceWorkerWrapper from '../components/ServiceWorkerWrapper'
 
 interface IndexPageProps {
   status: string

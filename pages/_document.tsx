@@ -2,7 +2,6 @@ import 'isomorphic-unfetch'
 import Document, { Head, Main, NextScript } from 'next/document'
 import { Context } from 'next'
 import { ServerStyleSheet } from 'styled-components'
-import ServiceWorkerWrapper from '../components/ServiceWorkerWrapper'
 
 export default class MyDocument extends Document {
   static getInitialProps(context: Context) {
