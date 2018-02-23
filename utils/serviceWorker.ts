@@ -62,6 +62,8 @@ export function register(config?: ServiceWorkerConfig) {
         registerValidSW(swUrl, config!)
       }
     })
+  } else {
+    unregister()
   }
 }
 
