@@ -1,6 +1,6 @@
 # pwawwwid-nextjs
 
-> WWWID reader as a Progressive Web App. Part of [#WWWIDChallenge](https://medium.com/wwwid/tantangan-web-developer-untuk-membuat-aplikasi-web-bisa-digunakan-kurang-dari-5-detik-70bb7431741d) for February 2018.
+> WWWID reader as a Progressive Web App, with Next.js. Part of [#WWWIDChallenge](https://medium.com/wwwid/tantangan-web-developer-untuk-membuat-aplikasi-web-bisa-digunakan-kurang-dari-5-detik-70bb7431741d) for February 2018.
 
 ---
 
